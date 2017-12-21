@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[SECCON 2017 Quals] Powerful_Shell</title>
+<meta name="description" content="Problem Crack me.">
+<meta name="author" content="Hyeonwoo Kang">
+<meta name="copyright" content="&copy; Hyeonwoo Kang 2018">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/hybrid.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#2980b9">
+
+<meta property="og:description" content="Problem Crack me."/>
+<meta property="og:url" content="https://kanglib.pe.kr"/>
+<meta property="og:site_name" content="/kanglib/"/>
+<meta property="og:title" content="[SECCON 2017 Quals] Powerful_Shell"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://kanglib.pe.kr/assets/logo.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="612"/>
+<meta property="og:image:height" content="605"/>
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[SECCON 2017 Quals] Powerful_Shell">
+<meta name="twitter:description" content="Problem Crack me.">
+<meta name="twitter:image" content="https://kanglib.pe.kr/assets/logo.png">
+<meta name="twitter:url" content="https://kanglib.pe.kr">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="//kanglib.pe.kr/hacking/2017/12/23/seccon-2017-quals-powerful-shell.html">
+<link rel="alternate" type="application/rss+xml" title="/kanglib/" href="//kanglib.pe.kr/feed.xml"/>
+</head>
+<body>
+<header class="navigation" role="banner">
+<div class="navigation-wrapper">
+<a href="/" class="logo">
+<img src="/assets/logo.png" alt="/kanglib/">
+</a>
+<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+<i class="fa fa-bars"></i>
+</a>
+<nav role="navigation">
+<ul id="js-navigation-menu" class="navigation-menu show">
+<li class="nav-link"><a href="/about/">About</a>
+<li class="nav-link"><a href="/posts/">Posts</a>
+<li class="nav-link"><a href="/category/hacking/">Hacking</a>
+<li class="nav-link"><a href="/category/etc/">Etc</a>
+</ul>
+</nav>
+</div>
+</header>
+<div class="page-content">
+<div class="post">
+<div class="post-header-container ">
+<div class="scrim ">
+<header class="post-header">
+<h1 class="title">[SECCON 2017 Quals] Powerful_Shell</h1>
+<p class="info">by <strong>Hyeonwoo Kang</strong></p>
+</header>
+</div>
+</div>
+<div class="wrapper">
+<span class="page-divider">
+<span class="one"></span>
+<span class="two"></span>
+</span>
+<section class="post-meta">
+<div class="post-date">December 23, 2017</div>
+<div class="post-categories">
+in
+<a href="/category/Hacking">Hacking</a>
+</div>
+</section>
+<article class="post-content">
+<h3 id="problem">Problem</h3>
+<blockquote>
+<p>Crack me.</p>
+</blockquote>
+<h3 id="solution">Solution</h3>
+<p>A PowerShell script is given:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ECCON</span><span class="o">=</span><span class="s2">""</span>;
+<span class="nv">$ECCON</span><span class="o">=</span><span class="s2">""</span>;
+<span class="nv">$ECCON</span>+<span class="o">=[</span><span class="kt">char</span><span class="o">](</span>3783/291<span class="o">)</span>;
+<span class="nv">$ECCON</span>+<span class="o">=[</span><span class="kt">char</span><span class="o">](</span>6690/669<span class="o">)</span>;
+<span class="nv">$ECCON</span>+<span class="o">=[</span><span class="kt">char</span><span class="o">](</span>776-740<span class="o">)</span>;
+<span class="c1"># ...</span>
+<span class="nv">$ECCON</span>+<span class="o">=[</span><span class="kt">char</span><span class="o">](</span>520-510<span class="o">)</span>;
+<span class="nb">Write-Progress</span> -Completed -Activity <span class="s2">"Extracting Script"</span>;.<span class="o">([</span>ScriptBlock]::Create<span class="o">(</span><span class="nv">$ECCON</span><span class="o">))</span>
+</code></pre></div></div>
+<p>Notice the last command <code class="highlighter-rouge">.([ScriptBlock]::Create($ECCON))</code>. It creates and
+sources a PowerShell script from <code class="highlighter-rouge">$ECCON</code> on the fly.<sup><a href="//blogs.technet.microsoft.com/heyscriptingguy/2013/05/21/powertip-create-a-powershell-script-block-on-the-fly/">1</a></sup> So we
+changed it to <code class="highlighter-rouge">echo $ECCON &gt; stage2.ps1</code> to extract the script.</p>
+<p>stage2.ps1:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ErrorActionPreference</span> <span class="o">=</span> <span class="s2">"ContinueSilently"</span>
+<span class="c1"># A very very long line to draw the SECCON logo</span>
+
+<span class="cm">&lt;# Host Check #&gt;</span>
+<span class="nb">Write-Host</span> -b 00 -f 15 Checking Host... Please wait... -n
+<span class="k">Try</span><span class="o">{</span>
+	<span class="k">If</span> <span class="o">((</span><span class="nb">Get-EventLog</span> -LogName Security | <span class="nb">Where </span>EventID -Eq 4624<span class="o">)</span>.Length -Lt 1000<span class="o">)</span> <span class="o">{</span>
+		<span class="nb">Write-Host</span> <span class="s2">"This host is too fresh!"</span>
+		<span class="k">Exit</span>
+	<span class="o">}</span>
+<span class="o">}</span><span class="k">Catch</span><span class="o">{</span>
+	<span class="nb">Write-Host</span> <span class="s2">"Failed: No admin rights!"</span>
+	<span class="k">Exit</span>
+<span class="o">}</span>
+<span class="nb">Write-Host</span> <span class="s2">"Check passed"</span>
+
+<span class="nv">$keytone</span><span class="o">=</span>@<span class="o">{</span><span class="s1">'a'</span><span class="o">=</span>261.63<span class="o">}</span>
+<span class="nv">$pk</span><span class="o">=</span><span class="s1">'a'</span>
+<span class="k">ForEach</span><span class="o">(</span><span class="nv">$k</span> <span class="k">in</span> <span class="o">(</span><span class="s1">'w'</span>,<span class="s1">'s'</span>,<span class="s1">'e'</span>,<span class="s1">'d'</span>,<span class="s1">'f'</span>,<span class="s1">'t'</span>,<span class="s1">'g'</span>,<span class="s1">'y'</span>,<span class="s1">'h'</span>,<span class="s1">'u'</span>,<span class="s1">'j'</span>,<span class="s1">'k'</span><span class="o">)){</span>
+	<span class="nv">$keytone</span>+<span class="o">=</span>@<span class="o">{</span><span class="nv">$k</span><span class="o">=</span><span class="nv">$keytone</span><span class="o">[</span><span class="nv">$pk</span><span class="o">]</span><span class="k">*</span><span class="o">[</span>math]::pow<span class="o">(</span>2,1/12<span class="o">)}</span>;<span class="nv">$pk</span><span class="o">=</span><span class="nv">$k</span>
+<span class="o">}</span>
+<span class="nb">Write-Host</span> -b 00 -f 15 <span class="s2">"Play the secret melody."</span>
+
+<span class="nb">Write-Host</span> -b 15 -f 00 -n <span class="s1">'   '</span>
+<span class="nb">Write-Host</span> -b 00 -f 15 -n <span class="s1">'   '</span>
+<span class="nb">Write-Host</span> -b 15 -f 00 -n <span class="s1">'  '</span>
+<span class="c1"># ...</span>
+<span class="nb">Write-Host</span> -b 15 -f 00  <span class="s1">'    '</span>
+<span class="nb">Write-Host</span>
+<span class="nv">$stage1</span><span class="o">=</span>@<span class="o">()</span>;<span class="nv">$f</span><span class="o">=</span><span class="s2">""</span>;
+<span class="k">While</span><span class="o">(</span><span class="nv">$stage1</span>.length -lt 14<span class="o">){</span>
+	<span class="nv">$key</span><span class="o">=(</span><span class="nb">Get-Host</span><span class="o">)</span>.ui.RawUI.ReadKey<span class="o">(</span><span class="s2">"NoEcho,IncludeKeyDown"</span><span class="o">)</span>
+	<span class="nv">$k</span><span class="o">=[</span><span class="kt">String</span><span class="o">]</span><span class="nv">$key</span>.Character
+	<span class="nv">$f</span>+<span class="o">=</span><span class="nv">$k</span>;
+	<span class="k">If</span><span class="o">(</span><span class="nv">$keytone</span>.Contains<span class="o">(</span><span class="nv">$k</span><span class="o">)){</span>
+		<span class="nv">$stage1</span>+<span class="o">=[</span>math]::floor<span class="o">(</span><span class="nv">$keytone</span><span class="o">[</span><span class="nv">$k</span><span class="o">])</span>
+		<span class="o">[</span>console]::beep<span class="o">(</span><span class="nv">$keytone</span><span class="o">[</span><span class="nv">$k</span><span class="o">]</span>,500<span class="o">)</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+<span class="nv">$secret</span><span class="o">=</span>@<span class="o">(</span>440,440,493,440,440,493,440,493,523,493,440,493,440,349<span class="o">)</span>
+<span class="k">If</span><span class="o">(</span><span class="nv">$secret</span>.length -eq <span class="nv">$stage1</span>.length<span class="o">){</span>
+	<span class="k">For</span> <span class="o">(</span><span class="nv">$i</span><span class="o">=</span>1; <span class="nv">$i</span> -le <span class="nv">$secret</span>.length; <span class="nv">$i</span>++<span class="o">)</span> <span class="o">{</span>
+		<span class="k">If</span><span class="o">(</span><span class="nv">$secret</span><span class="o">[</span><span class="nv">$i</span><span class="o">]</span> -ne <span class="nv">$stage1</span><span class="o">[</span><span class="nv">$i</span><span class="o">]){</span>
+			<span class="k">Exit</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	x <span class="s2">"Correct. Move to the next stage."</span>
+<span class="o">}</span>
+<span class="nv">$text</span><span class="o">=</span>@<span class="s2">"
+YkwRUxVXQ05DQ1NOE1sVVU4TUxdTThBBFVdDTUwTURVTThMqFldDQUwdUxVRTBNEFVdAQUwRUxtT
+TBEzFVdDQU8RUxdTbEwTNxVVQUNOEFEVUUwdQBVXQ0NOE1EWUUwRQRtVQ0FME1EVUU8RThdVTUNM
+EVMVUUwRFxdVQUNCE1MXU2JOE0gWV0oxSk1KTEIoExdBSDBOE0MVO0NKTkAoERVDSTFKThNNFUwR
+...
+ShtME0EVTBFGF0BOE0gVQhNDF0wTVxVBTxFKF0wdQxVOEygXTBE2FxROE10VShZOTBFTF2E=
+"</span>@
+
+<span class="nv">$plain</span><span class="o">=</span>@<span class="o">()</span>
+<span class="nv">$byteString</span> <span class="o">=</span> <span class="o">[</span>System.Convert]::FromBase64String<span class="o">(</span><span class="nv">$text</span><span class="o">)</span>
+<span class="nv">$xordData</span> <span class="o">=</span> <span class="k">$(for</span> <span class="o">(</span><span class="nv">$i</span> <span class="o">=</span> 0; <span class="nv">$i</span> -lt <span class="nv">$byteString</span>.length; <span class="k">)</span> <span class="o">{</span>
+	<span class="k">for</span> <span class="o">(</span><span class="nv">$j</span> <span class="o">=</span> 0; <span class="nv">$j</span> -lt <span class="nv">$f</span>.length; <span class="nv">$j</span>++<span class="o">)</span> <span class="o">{</span>
+		<span class="nv">$plain</span>+<span class="o">=</span><span class="nv">$byteString</span><span class="o">[</span><span class="nv">$i</span><span class="o">]</span> -bxor <span class="nv">$f</span><span class="o">[</span><span class="nv">$j</span><span class="o">]</span>
+		<span class="nv">$i</span>++
+		<span class="k">if</span> <span class="o">(</span><span class="nv">$i</span> -ge <span class="nv">$byteString</span>.Length<span class="o">)</span> <span class="o">{</span>
+			<span class="nv">$j</span> <span class="o">=</span> <span class="nv">$f</span>.length
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">})</span>
+<span class="nb">iex</span><span class="o">([</span>System.Text.Encoding]::ASCII.GetString<span class="o">(</span><span class="nv">$plain</span><span class="o">))</span>
+</code></pre></div></div>
+<p><a href="/assets/images/seccon-2017-quals-powerful-shell/figure1.png" rel="lightbox" title="Fig. 1"><img src="/assets/images/seccon-2017-quals-powerful-shell/figure1.png" alt="Fig. 1"/></a></p>
+<center>(Not so pretty because of the customized console... haha)</center>
+<p>It checks if the host has admin rights, but they aren’t necessary. We can simply
+remove that part to pass the check.
+<a href="/assets/images/seccon-2017-quals-powerful-shell/figure2.png" rel="lightbox" title="Fig. 2"><img src="/assets/images/seccon-2017-quals-powerful-shell/figure2.png" alt="Fig. 2"/></a>
+Wow, there’s a piano! @bayaheuro Make a guess… <code class="highlighter-rouge">$secret</code> has the score. 440 Hz
+is A4, blah blah. Then we get “hhjhhjhjkjhjhf”.</p>
+<style>.embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.embed-container iframe,.embed-container object,.embed-container embed{position:absolute;top:0;left:0;width:100%;height:100%}</style>
+<div class="embed-container"><iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/IHXBW9_oSMw" frameborder="0" allowfullscreen=""></iframe></div>
+<center>(I remember that I transferred at 武蔵小金井駅 when I visited Japan last year)</center>
+<p>Now, notice the last command again. <code class="highlighter-rouge">iex</code> executes the given expression. We
+changed that line to
+<code class="highlighter-rouge">echo [System.Text.Encoding]::ASCII.GetString($plain) &gt; stage3.ps1</code>.</p>
+<p>stage3.ps1:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="o">=</span>+<span class="k">$()</span>;<span class="k">${</span><span class="p">=</span><span class="k">}</span><span class="o">=</span><span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">+</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">@</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">.</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">[</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;
+<span class="k">${</span><span class="p">]</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">(</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">)</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">&amp;</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;<span class="k">${</span><span class="p">|</span><span class="k">}</span><span class="o">=</span>++<span class="k">${</span><span class="p">;</span><span class="k">}</span>;
+<span class="k">${</span><span class="s2">"}="</span><span class="p">[</span><span class="s2">"+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"[</span><span class="k">${</span><span class="p">)</span><span class="k">}</span><span class="s2">]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"["</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">"]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"["</span><span class="k">${</span><span class="p">@</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">"]+"</span><span class="nv">$?</span><span class="s2">"[</span><span class="k">${</span><span class="p">+</span><span class="k">}</span><span class="s2">]+"</span><span class="p">]</span><span class="s2">";
+</span><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="s2">="".("</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"["</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">"]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"["</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">"]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"[</span><span class="k">${</span><span class="p">=</span><span class="k">}</span><span class="s2">]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"[</span><span class="k">${</span><span class="p">[</span><span class="k">}</span><span class="s2">]+"</span><span class="nv">$?</span><span class="s2">"[</span><span class="k">${</span><span class="p">+</span><span class="k">}</span><span class="s2">]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"[</span><span class="k">${</span><span class="p">.</span><span class="k">}</span><span class="s2">]);
+</span><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="s2">="</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"["</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">"]+"</span><span class="k">$(</span>@<span class="o">{}</span><span class="k">)</span><span class="s2">"[</span><span class="k">${</span><span class="p">[</span><span class="k">}</span><span class="s2">]+"</span><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="s2">"["</span><span class="k">${</span><span class="p">@</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">"];"</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">|</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">|</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">]</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">|</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">]</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">[</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">+</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">@</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">&amp;</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">(</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">(</span><span class="k">}${</span><span class="p">)</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">|</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">)</span><span class="k">}${</span><span class="p">&amp;</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">.</span><span class="k">}${</span><span class="p">[</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">.</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">=</span><span class="k">}</span><span class="s2">+</span><span class="k">${</span><span class="s2">"}</span><span class="k">${</span><span class="p">+</span><span class="k">}${</span><span class="p">@</span><span class="k">}${</span><span class="p">]</span><span class="k">}</span><span class="s2">|</span><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="s2">"</span><span class="p">|&amp;</span><span class="k">${</span><span class="p">;</span><span class="k">}</span><span class="p">
+</span></code></pre></div></div>
+<p>Looks so ugly, but we can get a hint from sorting the original script:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">If</span><span class="o">(</span><span class="nv">$host</span>.<span class="s2">"na</span><span class="se">`m`e</span><span class="s2">"</span> -ne <span class="s2">"C</span><span class="se">`o</span><span class="s2">n</span><span class="se">`s`o`l`e`H`o`s</span><span class="s2">t"</span><span class="o">){</span><span class="s2">"D</span><span class="se">`e</span><span class="s2">b</span><span class="se">`u`g`g`i</span><span class="s2">n</span><span class="se">`g</span><span class="s2"> is </span><span class="se">`p</span><span class="s2">r</span><span class="se">`o`h`i</span><span class="s2">b</span><span class="se">`i</span><span class="s2">t</span><span class="se">`e`d</span><span class="s2">"</span>;<span class="k">Exit</span><span class="o">}</span>
+<span class="k">If</span><span class="o">(</span><span class="nb">Test-Path </span>variable:global:psISE<span class="o">){</span><span class="s2">"D</span><span class="se">`e</span><span class="s2">b</span><span class="se">`u`g`g`i</span><span class="s2">n</span><span class="se">`g</span><span class="s2"> is </span><span class="se">`p</span><span class="s2">r</span><span class="se">`o`h`i</span><span class="s2">b</span><span class="se">`i</span><span class="s2">t</span><span class="se">`e`d</span><span class="s2">"</span>;<span class="k">Exit</span><span class="o">}</span>
+</code></pre></div></div>
+<p>Because this check isn’t present in stage3.ps1, we can use PowerShell ISE to
+debug the script. Open ISE, execute stage3.ps1, type anything, press Ctrl-B and
+click the break button!
+<a href="/assets/images/seccon-2017-quals-powerful-shell/figure3.png" rel="lightbox" title="Fig. 3"><img src="/assets/images/seccon-2017-quals-powerful-shell/figure3.png" alt="Fig. 3"/></a>
+Now we have the flag.</p>
+</article>
+<section class="tags">
+<strong>Tags:</strong>&nbsp;<a href="/tag/reversing">reversing</a>,&nbsp;<a href="/tag/2017">2017</a>,&nbsp;<a href="/tag/seccon">seccon</a>,&nbsp;<a href="/tag/seccon-2017-quals">seccon-2017-quals</a>,&nbsp;<a href="/tag/windows">windows</a>
+</section>
+<section class="rss">
+<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+<section class="share">
+<span>Share: </span>
+<a href="//twitter.com/share?text=%5BSECCON+2017+Quals%5D+Powerful_Shell&url=https%3A%2F%2Fkanglib.pe.kr%2Fhacking%2F2017%2F12%2F23%2Fseccon-2017-quals-powerful-shell.html&via="
+onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+<i class="fa fa-twitter-square fa-lg"></i>
+</a>
+<a href="//www.facebook.com/sharer.php?t=%5BSECCON+2017+Quals%5D+Powerful_Shell&u=https%3A%2F%2Fkanglib.pe.kr%2Fhacking%2F2017%2F12%2F23%2Fseccon-2017-quals-powerful-shell.html"
+onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+<i class="fa fa-facebook-square fa-lg"></i>
+</a>
+</section>
+</div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="wrapper">
+<h3 class="footer-heading">/kanglib/</h3>
+<div class="site-navigation">
+<p><strong>Site Map</strong></p>
+<ul class="pages">
+<li class="nav-link"><a href="/about/">About</a>
+<li class="nav-link"><a href="/posts/">Posts</a>
+<li class="nav-link"><a href="/category/hacking/">Hacking</a>
+<li class="nav-link"><a href="/category/etc/">Etc</a>
+</ul>
+</div>
+<div class="site-contact">
+<p><strong>Contact</strong></p>
+<ul class="social-media-list">
+<li>
+<a href="mailto:kanglib14@gmail.com">
+<i class="fa fa-envelope-o"></i>
+<span class="username">kanglib14@gmail.com</span>
+</a>
+</li>
+<li>
+<a href="//github.com/kanglib" title="Fork me on GitHub">
+<i class="fa fa-github"></i>
+<span class="username">kanglib</span>
+</a>
+</li>
+<li>
+<a href="//bitbucket.org/kanglib/" title="Fork me on Bitbucket">
+<i class="fa fa-bitbucket"></i>
+<span class="username">kanglib</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="site-signature">
+<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+<p class="text">Hyeonwoo Kang a.k.a. kanglib, KAIST School of Computing.</p>
+</div>
+</div>
+</footer>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+<script type="text/javascript">$(document).ready(function(){hljs.initHighlightingOnLoad();var n=$("#js-mobile-menu").unbind();$("#js-navigation-menu").removeClass("show"),n.on("click",function(n){n.preventDefault(),$("#js-navigation-menu").slideToggle(function(){$("#js-navigation-menu").is(":hidden")&&$("#js-navigation-menu").removeAttr("style")})})});</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[SECCON 2017 Quals] z80</title>
+<meta name="description" content="Problem Reverse it.">
+<meta name="author" content="Hyeonwoo Kang">
+<meta name="copyright" content="&copy; Hyeonwoo Kang 2018">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/hybrid.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#2980b9">
+
+<meta property="og:description" content="Problem Reverse it."/>
+<meta property="og:url" content="https://kanglib.pe.kr"/>
+<meta property="og:site_name" content="/kanglib/"/>
+<meta property="og:title" content="[SECCON 2017 Quals] z80"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://kanglib.pe.kr/assets/logo.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="612"/>
+<meta property="og:image:height" content="605"/>
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[SECCON 2017 Quals] z80">
+<meta name="twitter:description" content="Problem Reverse it.">
+<meta name="twitter:image" content="https://kanglib.pe.kr/assets/logo.png">
+<meta name="twitter:url" content="https://kanglib.pe.kr">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="//kanglib.pe.kr/hacking/2017/12/24/seccon-2017-quals-z80.html">
+<link rel="alternate" type="application/rss+xml" title="/kanglib/" href="//kanglib.pe.kr/feed.xml"/>
+</head>
+<body>
+<header class="navigation" role="banner">
+<div class="navigation-wrapper">
+<a href="/" class="logo">
+<img src="/assets/logo.png" alt="/kanglib/">
+</a>
+<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+<i class="fa fa-bars"></i>
+</a>
+<nav role="navigation">
+<ul id="js-navigation-menu" class="navigation-menu show">
+<li class="nav-link">
+<a href="/about/">About</a>
+</li>
+<li class="nav-link">
+<a href="/posts/">Posts</a>
+</li>
+<li class="nav-link">
+<a href="/category/hacking/">Hacking</a>
+</li>
+<li class="nav-link">
+<a href="/category/etc/">Etc</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="page-content">
+<div class="post">
+<div class="post-header-container ">
+<div class="scrim ">
+<header class="post-header">
+<h1 class="title">[SECCON 2017 Quals] z80</h1>
+<p class="info">by <strong>Hyeonwoo Kang</strong></p>
+</header>
+</div>
+</div>
+<div class="wrapper">
+<span class="page-divider">
+<span class="one"></span>
+<span class="two"></span>
+</span>
+<section class="post-meta">
+<div class="post-date">December 24, 2017</div>
+<div class="post-categories">
+in
+<a href="/category/Hacking">Hacking</a>
+</div>
+</section>
+<article class="post-content">
+<h3 id="problem">Problem</h3>
+<blockquote>
+<p>Reverse it.</p>
+</blockquote>
+<h3 id="solution">Solution</h3>
+<p><img class="emoji" title=":kr:" alt=":kr:" src="//assets-cdn.github.com/images/icons/emoji/unicode/1f1f0-1f1f7.png" height="20" width="20"></p>
+<p><a href="http://okas832.tistory.com/4">Team write-up</a> by okas832</p>
+<p>아두이노도 알고 Z80 에뮬레이터도 구했는데 생각보다 잘 안 풀리더라… 그래서
+민엽이를 붙들고 풀었다.</p>
+<p>결국 원래 생각했던 풀이는 시험이 끝나고 한참 지나서야 완성했다. 늘 그렇듯이
+<strong>잘못 짜서.</strong></p>
+<p><a href="//github.com/kanglib/z80/commit/6bf0d7f">kanglib/z80</a></p>
+</article>
+<section class="tags">
+<strong>Tags:</strong> <a href="/tag/reversing">reversing</a>, <a href="/tag/2017">2017</a>, <a href="/tag/seccon">seccon</a>, <a href="/tag/seccon-2017-quals">seccon-2017-quals</a>
+</section>
+<section class="rss">
+<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+<section class="share">
+<span>Share: </span>
+<a href="//twitter.com/share?text=%5BSECCON+2017+Quals%5D+z80&amp;url=https%3A%2F%2Fkanglib.pe.kr%2Fhacking%2F2017%2F12%2F24%2Fseccon-2017-quals-z80.html&amp;via=" onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+<i class="fa fa-twitter-square fa-lg"></i>
+</a>
+<a href="//www.facebook.com/sharer.php?t=%5BSECCON+2017+Quals%5D+z80&amp;u=https%3A%2F%2Fkanglib.pe.kr%2Fhacking%2F2017%2F12%2F24%2Fseccon-2017-quals-z80.html" onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+<i class="fa fa-facebook-square fa-lg"></i>
+</a>
+</section>
+</div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="wrapper">
+<h3 class="footer-heading">/kanglib/</h3>
+<div class="site-navigation">
+<p><strong>Site Map</strong></p>
+<ul class="pages">
+<li class="nav-link">
+<a href="/about/">About</a>
+</li>
+<li class="nav-link">
+<a href="/posts/">Posts</a>
+</li>
+<li class="nav-link">
+<a href="/category/hacking/">Hacking</a>
+</li>
+<li class="nav-link">
+<a href="/category/etc/">Etc</a>
+</li>
+</ul>
+</div>
+<div class="site-contact">
+<p><strong>Contact</strong></p>
+<ul class="social-media-list">
+<li>
+<a href="mailto:kanglib14@gmail.com">
+<i class="fa fa-envelope-o"></i>
+<span class="username">kanglib14@gmail.com</span>
+</a>
+</li>
+<li>
+<a href="//github.com/kanglib" title="Fork me on GitHub">
+<i class="fa fa-github"></i>
+<span class="username">kanglib</span>
+</a>
+</li>
+<li>
+<a href="//bitbucket.org/kanglib/" title="Fork me on Bitbucket">
+<i class="fa fa-bitbucket"></i>
+<span class="username">kanglib</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="site-signature">
+<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+<p class="text">Hyeonwoo Kang a.k.a. kanglib, KAIST School of Computing.</p>
+</div>
+</div>
+</footer>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+<script type="text/javascript">$(document).ready(function(){hljs.initHighlightingOnLoad();var n=$("#js-mobile-menu").unbind();$("#js-navigation-menu").removeClass("show"),n.on("click",function(n){n.preventDefault(),$("#js-navigation-menu").slideToggle(function(){$("#js-navigation-menu").is(":hidden")&&$("#js-navigation-menu").removeAttr("style")})})});</script>
+</body>
+</html>
